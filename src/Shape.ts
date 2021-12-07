@@ -1,6 +1,9 @@
 import { Point } from './Point';
 
 export abstract class Shape {
+  protected readonly defaultColor: string = 'green';
+  protected readonly defaultFilledStatus: boolean = true;
+
   protected color: string = '';
   protected filled: boolean = false;
   protected points: Point[] = [];
@@ -15,8 +18,8 @@ export abstract class Shape {
     Shape.validate(points);
 
     this.points = points;
-    this.color = color ?? 'green';
-    this.filled = filled ?? true;
+    this.color = color ?? this.defaultColor;
+    this.filled = filled ?? this.defaultFilledStatus;
   }
 
   toString(): string {
