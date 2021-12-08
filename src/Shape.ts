@@ -52,7 +52,3 @@ export abstract class Shape {
 
   abstract getType(): string;
 }
-// const points = [new Point(0, 0), new Point(0, 3), new Point(4, 3)];
-// const s = new Shape(points);
-// console.log(s.toString());
-// console.log(s.getPerimeter());
