@@ -14,6 +14,8 @@ export abstract class Shape {
     }
   }
 
+  constructor(points: Point[]);
+  constructor(points: Point[], color: string, filled: boolean);
   constructor(points: Point[], color?: string, filled?: boolean) {
     Shape.validate(points);
 

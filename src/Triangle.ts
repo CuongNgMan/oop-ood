@@ -8,6 +8,8 @@ export enum TriangleTypes {
 }
 
 export class Triangle extends Shape {
+  constructor(p1: Point, p2: Point, p3: Point);
+  constructor(p1: Point, p2: Point, p3: Point, color: string, filled: boolean);
   constructor(p1: Point, p2: Point, p3: Point, color?: string, filled?: boolean) {
     super([p1, p2, p3], color, filled);
   }

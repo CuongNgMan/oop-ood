@@ -1,10 +1,18 @@
 export class Point {
-  constructor(private x: number = 0, private y: number = 0) {
-    this.x = x;
-    this.y = y;
+  private _x: number;
+  private _y: number;
+
+  constructor();
+  constructor(x: number, y: number);
+  constructor(x?: number, y?: number) {
+    this._x = x;
+    this._y = y;
   }
 
-  distance(x?: number | Point, y?: number): number {
+  distance();
+  distance(x: number | Point);
+  distance(x: number, y: number);
+  distance(x?: number, y?: number): number {
     switch (arguments.length) {
       case 0:
         return this.euclidean(this, new Point(0, 0));
@@ -31,5 +39,13 @@ export class Point {
 
   toString() {
     return `(${this.x}, ${this.y})`;
+  }
+
+  get x() {
+    return this._x;
+  }
+
+  get y() {
+    return this._y;
   }
 }
